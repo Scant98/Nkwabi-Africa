@@ -1,26 +1,150 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: hsl(40 20% 97%);
+  --background-muted: hsl(40 25% 94%);
+  --foreground: hsl(0 0% 8%);
+  --foreground-muted: hsl(0 0% 40%);
+  --border: hsl(40 15% 85%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 8%);
+  --primary: #c9a84c;
+  --primary-foreground: hsl(0 0% 6%);
+  --secondary: #1a4731;
+  --secondary-foreground: hsl(0 0% 98%);
+  --accent: hsl(40 60% 94%);
+  --accent-foreground: #8a6820;
+  --muted: hsl(40 20% 94%);
+  --muted-foreground: hsl(0 0% 45%);
+  --destructive: hsl(0 84% 60%);
+  --ring: #c9a84c;
+  --input: hsl(40 15% 85%);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(0 0% 5%);
+  --background-muted: hsl(0 0% 8%);
+  --foreground: hsl(40 15% 90%);
+  --foreground-muted: hsl(40 10% 55%);
+  --border: hsl(0 0% 13%);
+  --card: hsl(0 0% 8%);
+  --card-foreground: hsl(40 15% 90%);
+  --primary: #dda63a;
+  --primary-foreground: hsl(0 0% 5%);
+  --secondary: #1a6b3a;
+  --secondary-foreground: hsl(0 0% 98%);
+  --accent: hsl(40 20% 10%);
+  --accent-foreground: #e5b95a;
+  --muted: hsl(0 0% 10%);
+  --muted-foreground: hsl(40 10% 55%);
+  --destructive: hsl(0 63% 31%);
+  --ring: #dda63a;
+  --input: hsl(0 0% 13%);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-muted: var(--background-muted);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+  --radius-full: 9999px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: var(--ring);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(201, 168, 76, 0); }
+  }
+
+  /* Marquee — used by MarqueeStrip */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - var(--gap, 1rem))); }
+  }
+  @keyframes marquee-vertical {
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(-100% - var(--gap, 1rem))); }
+  }
+
+  /* Shiny text shimmer — used by SectionLabel */
+  @keyframes shiny-text {
+    0%, 90%, 100% {
+      background-position: calc(-100% - var(--shiny-width, 120px)) 0;
+    }
+    30%, 60% {
+      background-position: calc(100% + var(--shiny-width, 120px)) 0;
+    }
+  }
+
+  /* Gentle float — used on mission/vision cards */
+  @keyframes float-y {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* Rotating gradient ring — used on CTA */
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #e5b95a 0%, #c9a84c 50%, #8a6820 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gold-gradient-light {
+    background: linear-gradient(135deg, #fdf8ee 0%, #e5b95a 50%, #c9a84c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .border-gold-glow {
+    box-shadow: 0 0 24px -6px rgba(201, 168, 76, 0.5);
+  }
 }
