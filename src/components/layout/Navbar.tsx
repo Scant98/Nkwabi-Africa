@@ -3,10 +3,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon, Mountain } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -43,9 +44,7 @@ export function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <Mountain className="w-5 h-5 text-primary-foreground" />
-              </div>
+              <Image src="/logo.png" alt="Nkwabi Africa" width={40} height={40} className="rounded-lg object-contain" />
               <div>
                 <span className="font-bold text-base leading-tight text-foreground">Nkwabi Africa</span>
                 <p className="text-[10px] text-muted-foreground leading-tight hidden sm:block">Company Limited</p>
@@ -113,9 +112,7 @@ export function Navbar() {
           >
             <div className="flex items-center justify-between px-4 h-16">
               <Link href="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-                <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                  <Mountain className="w-5 h-5 text-primary-foreground" />
-                </div>
+                <Image src="/logo.png" alt="Nkwabi Africa" width={36} height={36} className="rounded-lg object-contain" />
                 <span className="font-bold text-base text-foreground">Nkwabi Africa</span>
               </Link>
               <button onClick={() => setMobileOpen(false)} className="w-9 h-9 flex items-center justify-center">

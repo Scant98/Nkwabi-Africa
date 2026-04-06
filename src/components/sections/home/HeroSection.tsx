@@ -9,10 +9,11 @@ import coffee1 from "@/components/images/coffee 1.jpeg";
 import agro1 from "@/components/images/agro1.jpeg";
 import logi1 from "@/components/images/logi1.jpeg";
 import chemi1 from "@/components/images/chemi1.jpeg";
+import gold1 from "@/components/images/gold1.jpg";
 
 const mosaicImages = [
   { src: coffee1, alt: "Coffee trading in Tanzania", label: "Coffee & Agri", delay: 0.55, rotate: 2, position: "top-0 left-0 w-[52%]" },
-  { src: agro1, alt: "Agriculture in Tanzania", label: "Agriculture", delay: 0.70, rotate: -1.5, position: "top-4 right-0 w-[44%]" },
+  { src: gold1, alt: "Gold mining and trading in Tanzania", label: "GOld Sector", delay: 0.70, rotate: -1.5, position: "top-4 right-0 w-[44%]" },
   { src: logi1, alt: "Logistics fleet", label: "Logistics", delay: 0.85, rotate: -2, position: "bottom-0 left-4 w-[44%]" },
   { src: chemi1, alt: "Mining chemicals supply", label: "Mining Chemicals", delay: 1.0, rotate: 1.5, position: "bottom-4 right-0 w-[52%]" },
 ];
@@ -26,7 +27,7 @@ export function HeroSection() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-background-muted">
+    <section ref={sectionRef} className="relative min-h-screen flex flex-col justify-center overflow-clip bg-background-muted">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background-muted to-background" />
       {/* Parallax ambient orbs */}

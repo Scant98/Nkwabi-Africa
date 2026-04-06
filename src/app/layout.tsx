@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   },
   description: "A diversified Tanzanian company driving sustainable growth through gold mining, agriculture, logistics, and mining chemicals.",
   keywords: ["Tanzania", "gold mining", "coffee", "agriculture", "logistics", "Nkwabi Africa"],
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

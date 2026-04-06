@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mountain, Mail, Phone, MapPin, Share2, Globe2 } from "lucide-react";
+import { Mail, Phone, MapPin, Share2, Globe2 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 import type { Variants } from "framer-motion";
@@ -37,9 +38,9 @@ export function Footer() {
               <motion.div
                 whileHover={{ rotate: 10, scale: 1.08 }}
                 transition={{ duration: 0.2 }}
-                className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center"
+                className="w-9 h-9 rounded-lg overflow-hidden shrink-0"
               >
-                <Mountain className="w-5 h-5 text-primary-foreground" />
+                <Image src="/logo.png" alt="Nkwabi Africa" width={36} height={36} className="object-contain w-full h-full" />
               </motion.div>
               <div>
                 <span className="font-bold text-base text-foreground group-hover:text-primary transition-colors">Nkwabi Africa</span>

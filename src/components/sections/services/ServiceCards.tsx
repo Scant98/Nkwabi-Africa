@@ -1,62 +1,24 @@
 "use client";
-import { useState } from "react";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 import { ScrollRevealWrapper } from "@/components/common/ScrollRevealWrapper";
-import {
-  Pickaxe, Leaf, Truck, FlaskConical, CheckCircle, ArrowRight, X,
-  MapPin, Coffee, Globe, FileText, Users, Mountain, Droplets,
-  ShieldCheck, Package, Navigation, Warehouse, FlaskRound, AlertTriangle,
-  ExternalLink,
-} from "lucide-react";
+import { CheckCircle, ArrowRight, Pickaxe, Leaf, Truck, FlaskConical } from "lucide-react";
 import Link from "next/link";
-import coffee1 from "@/components/images/coffee 1.jpeg";
 import agro1 from "@/components/images/agro1.jpeg";
-import agro2 from "@/components/images/agro2.jpeg";
-import logi1 from "@/components/images/logi1.jpeg";
 import logi2 from "@/components/images/logi2.jpeg";
-import logi3 from "@/components/images/logi3.jpeg";
-import chemi1 from "@/components/images/chemi1.jpeg";
-import chemi2 from "@/components/images/chemi2.jpeg";
+import gold1 from "@/components/images/gold1.jpg";
 import chemi3 from "@/components/images/chemi3.jpeg";
-import chemi4 from "@/components/images/chemi4.jpeg";
 
-/* ─── Image data per service ─────────────────────────────────────────── */
 const servicePrimaryImage: Record<string, StaticImageData> = {
-  "gold-mining": chemi2,
+  "gold-mining": gold1,
   "agriculture": agro1,
   "logistics": logi2,
   "chemicals": chemi3,
 };
 
-const serviceGalleryImages: Record<string, { src: StaticImageData; label: string }[]> = {
-  "gold-mining": [
-    { src: chemi4, label: "Mining Operations" },
-    { src: chemi1, label: "Gold Processing" },
-    { src: agro1, label: "Community Engagement" },
-  ],
-  "agriculture": [
-    { src: agro1, label: "Coffee Farms" },
-    { src: agro2, label: "Processing Facility" },
-    { src: coffee1, label: "Export Ready" },
-  ],
-  "logistics": [
-    { src: logi1, label: "Cargo Fleet" },
-    { src: logi2, label: "Warehousing" },
-    { src: logi3, label: "Cross-border Routes" },
-  ],
-  "chemicals": [
-    { src: chemi1, label: "Chemical Supply" },
-    { src: chemi2, label: "Safety Equipment" },
-    { src: chemi3, label: "Compliant Storage" },
-  ],
-};
-
-/* ─── Service card data ─────────────────────────────────────────────── */
 const services = [
   {
     id: "gold-mining",
@@ -74,6 +36,7 @@ const services = [
       "Community development programs",
       "ISO 14001 & ISO 45001 compliance",
     ],
+    href: "/services/gold-mining",
     bgClass: "bg-background-muted",
   },
   {
@@ -92,6 +55,7 @@ const services = [
       "Sustainable farming practice training",
       "TCB-compliant export documentation",
     ],
+    href: "/services/agriculture",
     bgClass: "bg-background",
   },
   {
@@ -110,6 +74,7 @@ const services = [
       "Real-time tracking and reporting",
       "Mining equipment movement specialists",
     ],
+    href: "/services/logistics",
     bgClass: "bg-background-muted",
   },
   {
@@ -128,281 +93,12 @@ const services = [
       "MSDS documentation and training",
       "Compliant storage and transport solutions",
     ],
+    href: "/services/chemicals",
     bgClass: "bg-background",
   },
 ];
 
-/* ─── Rich detail per service ───────────────────────────────────────── */
-const serviceDetails: Record<string, {
-  overview: string;
-  highlights: { icon: React.ElementType; label: string; value: string }[];
-  sections: { title: string; items: string[] }[];
-}> = {
-  "gold-mining": {
-    overview:
-      "Nkwabi Africa operates across Tanzania's premier gold belt, combining modern extraction techniques with responsible community practices. We work with both large-scale operations and artisanal miners (ASM) to ensure inclusive economic benefit.",
-    highlights: [
-      { icon: MapPin, label: "Primary Regions", value: "Geita & Mwanza" },
-      { icon: Mountain, label: "Operation Type", value: "Open-pit & ASM" },
-      { icon: ShieldCheck, label: "Certifications", value: "ISO 14001 & 45001" },
-      { icon: Globe, label: "Export Markets", value: "Dubai & Johannesburg" },
-    ],
-    sections: [
-      {
-        title: "Operational Areas",
-        items: [
-          "Geita Region — Primary extraction zone, open-pit and underground operations",
-          "Mwanza Region — ASM partnership hub and gold buying centre",
-          "Lake Victoria Zone — Artisanal mining support and training",
-          "Dar es Salaam — Export processing and international trading office",
-        ],
-      },
-      {
-        title: "Our Process",
-        items: [
-          "Geological exploration and resource assessment",
-          "Responsible extraction with minimal land disturbance",
-          "On-site processing and gold refining",
-          "Quality assurance and assay certification",
-          "Secure transport and international trading",
-        ],
-      },
-    ],
-  },
-
-  "agriculture": {
-    overview:
-      "We work at the heart of the Tanzanian coffee trade and broader agricultural sector, connecting international buyers with reliable sources of high-quality green coffee and other export crops directly from origin. Our work spans the full value chain from farmer to export vessel.",
-    highlights: [
-      { icon: MapPin, label: "Key Coffee Regions", value: "Kilimanjaro, Mbeya, Kagera" },
-      { icon: Coffee, label: "Coffee Types", value: "Arabica & Natural Robusta" },
-      { icon: FileText, label: "Compliance", value: "TCB & AMCOS Certified" },
-      { icon: Globe, label: "Export Markets", value: "Europe & Asia" },
-    ],
-    sections: [
-      {
-        title: "Growing Regions",
-        items: [
-          "Kilimanjaro Region — Arabica, 1,400–1,800m, washed process, bright acidity & floral notes",
-          "Mbeya Region — Arabica, 1,500–2,200m, fully washed, complex fruity and wine-like",
-          "Kagera Region — Robusta, 1,100–1,600m, natural process, bold body & earthy flavors",
-          "Kigoma Region — Robusta, 900–1,400m, strong cup, low acidity",
-        ],
-      },
-      {
-        title: "Export Process",
-        items: [
-          "Direct sourcing from AMCOS cooperatives and licensed processors",
-          "Quality assessment — grade, moisture content & cupping profile",
-          "Processing at TCB-licensed facilities under regulatory oversight",
-          "Export documentation and grading via Dar es Salaam warehouses",
-          "Container booking and vessel scheduling to buyer destinations",
-        ],
-      },
-    ],
-  },
-
-  "logistics": {
-    overview:
-      "Our logistics division provides end-to-end transportation and supply chain management tailored to the unique demands of Tanzania's mining, agriculture, and industrial sectors. We cover the full country and extend into neighboring East African nations.",
-    highlights: [
-      { icon: Navigation, label: "Coverage", value: "Nationwide + Cross-border" },
-      { icon: Truck, label: "Fleet", value: "Heavy cargo & temperature-controlled" },
-      { icon: Warehouse, label: "Storage", value: "Hazmat & cold storage warehousing" },
-      { icon: ShieldCheck, label: "Compliance", value: "Tanzania Revenue Authority cleared" },
-    ],
-    sections: [
-      {
-        title: "Service Coverage",
-        items: [
-          "Dar es Salaam — Main port logistics and freight forwarding",
-          "Mwanza & Geita — Mining sector transport specialists",
-          "Arusha & Kilimanjaro — Agriculture produce transportation",
-          "Cross-border routes to Kenya, Uganda, Rwanda, Zambia, DRC",
-        ],
-      },
-      {
-        title: "Capabilities",
-        items: [
-          "Heavy-lift and oversized cargo movement for mining equipment",
-          "Temperature-controlled transport for perishable agricultural produce",
-          "Hazardous materials (HAZMAT) certified drivers and vehicles",
-          "End-to-end customs clearance and TRA compliance",
-          "Real-time GPS fleet tracking and client reporting",
-        ],
-      },
-    ],
-  },
-
-  "chemicals": {
-    overview:
-      "We are a regulated supplier of essential chemicals and reagents for Tanzania's gold mining industry. All products meet international safety standards and are supplied with full MSDS documentation, trained delivery personnel, and compliant storage solutions.",
-    highlights: [
-      { icon: ShieldCheck, label: "Safety Standard", value: "ISO 45001 & MSDS Certified" },
-      { icon: Package, label: "Core Products", value: "Sodium Cyanide, Activated Carbon" },
-      { icon: AlertTriangle, label: "Handling", value: "HAZMAT certified logistics" },
-      { icon: Globe, label: "Sourcing", value: "Reputable international manufacturers" },
-    ],
-    sections: [
-      {
-        title: "Product Range",
-        items: [
-          "Sodium Cyanide — Gold leaching reagent for CIL/CIP circuits",
-          "Activated Carbon — For gold adsorption and recovery processes",
-          "Hydrated Lime — pH control and cyanide detoxification",
-          "Hydrogen Peroxide — Cyanide destruction in tailings",
-          "Safety & PPE — Respiratory, chemical suits, protective gear",
-        ],
-      },
-      {
-        title: "Compliance & Safety",
-        items: [
-          "Full Material Safety Data Sheet (MSDS) documentation for all products",
-          "HAZMAT-certified transport and delivery personnel",
-          "Compliant on-site storage consultation and setup",
-          "Staff training on safe chemical handling and emergency response",
-          "Regulatory compliance with NEMC and TMAA standards",
-        ],
-      },
-    ],
-  },
-};
-
-/* ─── Service detail modal ──────────────────────────────────────────── */
-function ServiceModal({ service, open, onClose }: {
-  service: typeof services[0];
-  open: boolean;
-  onClose: () => void;
-}) {
-  const detail = serviceDetails[service.id];
-  const gallery = serviceGalleryImages[service.id] ?? [];
-
-  return (
-    <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
-      <DialogContent className="max-w-3xl w-full max-h-[90vh] overflow-y-auto p-0 gap-0">
-        {/* Header with primary image */}
-        <div className="relative overflow-hidden">
-          {servicePrimaryImage[service.id] && (
-            <div className="relative w-full h-48 sm:h-56">
-              <Image
-                src={servicePrimaryImage[service.id]}
-                alt={service.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 768px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/70" />
-            </div>
-          )}
-          <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-            <Badge variant="gold" className="mb-2">{service.badge}</Badge>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-primary/20 backdrop-blur-sm flex items-center justify-center shrink-0">
-                <service.icon className="w-5 h-5 text-primary" />
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">{service.title}</h2>
-            </div>
-          </div>
-          <DialogClose className="absolute right-4 top-4 rounded-full bg-black/40 backdrop-blur-sm w-8 h-8 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity z-10">
-            <X className="h-4 w-4 text-white" />
-            <span className="sr-only">Close</span>
-          </DialogClose>
-        </div>
-
-        <div className="p-6 sm:p-8 space-y-8 border-t border-border bg-background">
-          {/* Overview */}
-          <p className="text-muted-foreground leading-relaxed">{detail.overview}</p>
-
-          {/* Quick stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {detail.highlights.map((h) => (
-              <div key={h.label} className="bg-card border border-border rounded-xl p-3 flex flex-col gap-1">
-                <h.icon className="w-4 h-4 text-primary mb-1" />
-                <p className="text-[10px] text-muted-foreground uppercase tracking-wide">{h.label}</p>
-                <p className="text-sm font-semibold text-foreground leading-tight">{h.value}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Gallery */}
-          {gallery.length > 0 && (
-            <div>
-              <h3 className="text-sm font-semibold text-foreground uppercase tracking-widest mb-3">Gallery</h3>
-              <div className="grid grid-cols-3 gap-3">
-                {gallery.map((g, idx) => (
-                  <motion.div
-                    key={idx}
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ duration: 0.2 }}
-                    className="relative rounded-xl overflow-hidden aspect-video"
-                  >
-                    <Image
-                      src={g.src}
-                      alt={g.label}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 33vw, 200px"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-2 left-2 right-2">
-                      <span className="text-[9px] font-medium text-white/80 uppercase tracking-widest">{g.label}</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Detail sections */}
-          {detail.sections.map((section) => (
-            <div key={section.title}>
-              <h3 className="text-sm font-semibold text-foreground uppercase tracking-widest mb-3">{section.title}</h3>
-              <ul className="space-y-2">
-                {section.items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-          {/* Key capabilities */}
-          <div>
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-widest mb-3">Key Capabilities</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {service.features.map((f) => (
-                <div key={f} className="flex items-start gap-2 text-sm text-foreground bg-card border border-border rounded-lg p-3">
-                  <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                  {f}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-3 pt-2 border-t border-border">
-            <Button asChild className="bg-primary text-primary-foreground hover:opacity-90 gap-2 flex-1">
-              <Link href="/contact" onClick={onClose}>
-                Contact Us About This Service
-                <ExternalLink className="w-4 h-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" onClick={onClose} className="border-border">
-              Back to Services
-            </Button>
-          </div>
-        </div>
-      </DialogContent>
-    </Dialog>
-  );
-}
-
-/* ─── Main export ────────────────────────────────────────────────────── */
 export function ServiceCards() {
-  const [activeService, setActiveService] = useState<typeof services[0] | null>(null);
-
   return (
     <>
       {services.map((service, i) => {
@@ -425,12 +121,11 @@ export function ServiceCards() {
                   </div>
                   <p className="text-lg text-primary font-medium mb-4">{service.tagline}</p>
                   <p className="text-muted-foreground leading-relaxed mb-8">{service.description}</p>
-                  <Button
-                    onClick={() => setActiveService(service)}
-                    className="bg-primary text-primary-foreground hover:opacity-90 gap-2"
-                  >
-                    Inquire About This Service
-                    <ArrowRight className="w-4 h-4" />
+                  <Button asChild className="bg-primary text-primary-foreground hover:opacity-90 gap-2">
+                    <Link href={service.href}>
+                      Inquire About This Service
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </Button>
                 </ScrollRevealWrapper>
 
@@ -478,14 +173,6 @@ export function ServiceCards() {
           </section>
         );
       })}
-
-      {activeService && (
-        <ServiceModal
-          service={activeService}
-          open={!!activeService}
-          onClose={() => setActiveService(null)}
-        />
-      )}
     </>
   );
 }

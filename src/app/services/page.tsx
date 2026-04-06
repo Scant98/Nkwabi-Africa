@@ -25,7 +25,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Service sections with inquiry modals */}
+      {/* Service sections */}
       <ServiceCards />
 
       {/* Consultation CTA */}
