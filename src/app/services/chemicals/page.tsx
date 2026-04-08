@@ -16,7 +16,7 @@ import sodaAsh from "@/components/images/soda Ash.png";
 import sulfuricAcid from "@/components/images/sulfuric acid.png";
 import ammoniumNitrate from "@/components/images/Ammonium Nitrate.png";
 import safety from "@/components/images/safety.jpg";
-import chemi2 from "@/components/images/chemi2.jpeg";
+
 
 const highlights = [
   { icon: ShieldCheck, label: "Safety Standard", value: "ISO 45001 & MSDS Certified" },
@@ -82,14 +82,14 @@ const products = [
     specs: ["Form: Porous Prills — 25 KG", "UN No: 1942 / Class 5.1", "Supplier: TKG Huchems, Korea"],
     image: ammoniumNitrate,
   },
-  {
-    name: "Activated Carbon",
-    tag: "Gold Recovery",
-    use: "Gold adsorption and recovery from pregnant leach solutions",
-    detail: "High-activity granular carbon for CIL, CIP, and CIC gold recovery circuits. Consistent activity and hardness specifications from reputable international manufacturers.",
-    specs: ["Form: Granular", "Activity: High-grade", "Reactivation: Supported"],
-    image: chemi2,
-  },
+  // {
+  //   name: "Activated Carbon",
+  //   tag: "Gold Recovery",
+  //   use: "Gold adsorption and recovery from pregnant leach solutions",
+  //   detail: "High-activity granular carbon for CIL, CIP, and CIC gold recovery circuits. Consistent activity and hardness specifications from reputable international manufacturers.",
+  //   specs: ["Form: Granular", "Activity: High-grade", "Reactivation: Supported"],
+  //   image: chemi2,
+  // },
   {
     name: "Safety & PPE",
     tag: "Site Protection",
