@@ -8,57 +8,93 @@ import { ChemicalHero } from "@/components/sections/services/ChemicalHero";
 import {
   CheckCircle, ShieldCheck, Package, AlertTriangle, Globe, ArrowRight,
 } from "lucide-react";
-import chemi1 from "@/components/images/chemi1.jpeg";
-import chemi2 from "@/components/images/chemi2.jpeg";
-import chemi3 from "@/components/images/chemi3.jpeg";
-import chemi4 from "@/components/images/chemi4.jpeg";
+import sodiumCyanide from "@/components/images/Sodium cynade.png";
+import causticSoda from "@/components/images/caustic soda.png";
+import flocculant from "@/components/images/flucculant.png";
+import nitricAcid from "@/components/images/Nitric acid.png";
+import sodaAsh from "@/components/images/soda Ash.png";
+import sulfuricAcid from "@/components/images/sulfuric acid.png";
+import ammoniumNitrate from "@/components/images/Ammonium Nitrate.png";
 import safety from "@/components/images/safety.jpg";
+import chemi2 from "@/components/images/chemi2.jpeg";
 
 const highlights = [
   { icon: ShieldCheck, label: "Safety Standard", value: "ISO 45001 & MSDS Certified" },
-  { icon: Package, label: "Core Products", value: "Sodium Cyanide, Activated Carbon" },
+  { icon: Package, label: "Products Supplied", value: "7 Core Mining Chemicals" },
   { icon: AlertTriangle, label: "Handling", value: "HAZMAT certified logistics" },
-  { icon: Globe, label: "Sourcing", value: "International manufacturers" },
+  { icon: Globe, label: "Sourcing", value: "China, India, Korea & beyond" },
 ];
 
 const products = [
   {
     name: "Sodium Cyanide",
     tag: "Leaching Reagent",
-    use: "Gold leaching reagent for CIL/CIP processing circuits",
-    detail: "Supplied in solid briquette form with full MSDS documentation and HAZMAT-certified delivery. Sourced from internationally certified manufacturers meeting global safety standards.",
-    specs: ["Form: Solid briquettes", "Standard: ISO / ICMI certified", "Delivery: HAZMAT fleet"],
-    image: chemi1,
+    use: "Primary gold leaching reagent for CIL/CIP processing circuits",
+    detail: "Supplied in sealed blue drums with full MSDS documentation and HAZMAT-certified delivery. Sourced from internationally ICMI-certified manufacturers. Used widely across Tanzania's gold processing plants.",
+    specs: ["Form: Liquid in sealed drums", "Standard: ICMI & ISO certified", "Delivery: HAZMAT fleet"],
+    image: sodiumCyanide,
+  },
+  {
+    name: "Caustic Soda Flakes",
+    tag: "pH Regulation",
+    use: "pH regulation and sodium hydroxide supply for gold processing",
+    detail: "NaOH 98.5% MIN purity caustic soda flakes supplied in 25 KG bags. Sourced from Inner Mongolia Erdos Electric Power & Metallurgy Group. UN certified packaging (5H3/Y26/S/25).",
+    specs: ["Form: Flakes — 25 KG bags", "Purity: NaOH ≥ 98.5%", "UN Code: 5H3/Y26/S/25"],
+    image: causticSoda,
+  },
+  {
+    name: "Polyacrylamide Flocculant",
+    tag: "Tailings Management",
+    use: "Solid-liquid separation and tailings clarification in gold processing",
+    detail: "Polyacrylamide-based flocculant supplied in 25 KG bags. Used to improve settling rates in thickeners and tailing dams, reducing water turbidity and aiding solids recovery.",
+    specs: ["Form: Powder — 25 KG bags", "Type: Polyacrylamide (PAM)", "Application: Thickeners & dams"],
+    image: flocculant,
+  },
+  {
+    name: "Nitric Acid",
+    tag: "Assay & Refining",
+    use: "Gold assay, refining, and acid leaching applications",
+    detail: "UN 2031, Class 8(5.1) — Corrosive and Oxidizing Agent. Supplied in heavy-duty plastic drums (33 KG net). Sourced from TKG Huchems, South Korea. Full HAZMAT handling protocols apply.",
+    specs: ["UN No: 2031 / Class 8(5.1)", "Form: Liquid — 33 KG drums", "Hazard: Corrosive + Oxidizing"],
+    image: nitricAcid,
+  },
+  {
+    name: "Soda Ash Light",
+    tag: "pH & Detoxification",
+    use: "pH adjustment and cyanide detoxification in tailings treatment",
+    detail: "Sodium Carbonate (Na₂CO₃) — Soda Ash Light 99.2% MIN purity, supplied in 25 KG bags. Sourced from Shandong Haihua, China. Used in cyanide circuit pH control and effluent treatment.",
+    specs: ["Form: Powder — 25 KG bags", "Purity: Na₂CO₃ ≥ 99.2%", "Origin: Shandong Haihua, China"],
+    image: sodaAsh,
+  },
+  {
+    name: "Sulfuric Acid 98%",
+    tag: "Acid Leaching",
+    use: "Acid leaching, pH adjustment, and mineral processing applications",
+    detail: "Sulfuric Acid 98% concentration, UN 1830, Class 8 — Corrosive. Supplied in 50 KG blue plastic drums. Sourced from Prakash Chemicals International, India. Expiry: Nov 2026.",
+    specs: ["Form: Liquid — 50 KG drums", "Concentration: 98%", "UN No: 1830 / Class 8"],
+    image: sulfuricAcid,
+  },
+  {
+    name: "Ammonium Nitrate (PPAN)",
+    tag: "Mining Explosive Reagent",
+    use: "Blasting and mining operations as an oxidising agent",
+    detail: "Porous Prilled Ammonium Nitrate (PPAN), UN 1942 — Oxidising Agent Class 5.1. Supplied in 25 KG bags by TKG Huchems, South Korea. Used in ANFO explosives for open-pit blasting operations.",
+    specs: ["Form: Porous Prills — 25 KG", "UN No: 1942 / Class 5.1", "Supplier: TKG Huchems, Korea"],
+    image: ammoniumNitrate,
   },
   {
     name: "Activated Carbon",
     tag: "Gold Recovery",
     use: "Gold adsorption and recovery from pregnant leach solutions",
-    detail: "High-activity carbon grades for CIL, CIP, and CIC gold recovery circuits. Sourced from reputable international manufacturers with consistent activity and hardness specifications.",
+    detail: "High-activity granular carbon for CIL, CIP, and CIC gold recovery circuits. Consistent activity and hardness specifications from reputable international manufacturers.",
     specs: ["Form: Granular", "Activity: High-grade", "Reactivation: Supported"],
     image: chemi2,
-  },
-  {
-    name: "Hydrated Lime",
-    tag: "pH Control",
-    use: "pH control and cyanide detoxification in tailings management",
-    detail: "Available in bulk or bagged form with consistent purity specifications. Essential for maintaining protective alkalinity in cyanide circuits and for cyanide detoxification.",
-    specs: ["Form: Powder / Bulk", "Purity: High calcium", "Application: pH & detox"],
-    image: chemi3,
-  },
-  {
-    name: "Hydrogen Peroxide",
-    tag: "Tailings Treatment",
-    use: "Cyanide destruction and tailings treatment",
-    detail: "Industrial-grade solution used in cyanide destruction processes in tailings ponds. Supplied with full handling documentation and delivered by trained personnel.",
-    specs: ["Form: Liquid solution", "Grade: Industrial", "Compliance: NEMC approved"],
-    image: chemi4,
   },
   {
     name: "Safety & PPE",
     tag: "Site Protection",
     use: "Respiratory protection, chemical suits, and site safety equipment",
-    detail: "Full range of site-appropriate personal protective equipment for chemical handling — including respirators, chemical protective suits, gloves, eye protection, and emergency response kits.",
+    detail: "Full range of site-appropriate personal protective equipment — respirators, chemical protective suits, gloves, eye protection, and emergency response kits supplied with every chemical delivery.",
     specs: ["Standards: CE / ANSI", "Coverage: Full-body protection", "Training: Included"],
     image: safety,
   },
@@ -129,24 +165,24 @@ export default function ChemicalsPage() {
             <ScrollRevealWrapper direction="right">
               <div className="grid grid-cols-2 gap-3">
                 <div className="row-span-2 relative rounded-2xl overflow-hidden min-h-[320px]">
-                  <Image src={chemi1} alt="Chemical supply" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="25vw" />
+                  <Image src={sodiumCyanide} alt="Sodium Cyanide drums" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="25vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3">
-                    <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Supply</span>
+                    <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Sodium Cyanide</span>
                   </div>
                 </div>
                 <div className="relative rounded-2xl overflow-hidden aspect-square">
-                  <Image src={chemi2} alt="Safety equipment" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="20vw" />
+                  <Image src={causticSoda} alt="Caustic Soda Flakes" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="20vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3">
-                    <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Safety</span>
+                    <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Caustic Soda</span>
                   </div>
                 </div>
                 <div className="relative rounded-2xl overflow-hidden aspect-square">
-                  <Image src={chemi4} alt="Compliant storage" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="20vw" />
+                  <Image src={sulfuricAcid} alt="Sulfuric Acid" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="20vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3">
-                    <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Storage</span>
+                    <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Sulfuric Acid</span>
                   </div>
                 </div>
               </div>
