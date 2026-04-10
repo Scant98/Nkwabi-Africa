@@ -14,6 +14,7 @@ const directors = [
   {
     name: "Steven Emmanuel Nkwabi",
     title: "Chairman",
+    objectPosition: "center top",
     image: chairman,
     bio: "A visionary leader with extensive experience in Tanzania's mining and resource sectors. Steven founded Nkwabi Africa with a commitment to responsible business practices that create lasting value for communities across the region.",
     responsibilities: [
@@ -26,6 +27,7 @@ const directors = [
   {
     name: "Emiliana Richard Msekela",
     title: "Chief Executive Officer",
+    objectPosition: "center 15%",
     image: ceo,
     bio: "An accomplished executive driving Nkwabi Africa's operational excellence and growth across all business divisions. Emiliana brings deep expertise in resource management, trade, and sustainable development across East Africa.",
     responsibilities: [
@@ -95,7 +97,8 @@ export default function DirectorsPage() {
                       src={director.image}
                       alt={director.name}
                       fill
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      style={{ objectPosition: director.objectPosition }}
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     {/* Gradient overlay */}
