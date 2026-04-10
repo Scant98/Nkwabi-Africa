@@ -27,7 +27,7 @@ const directors = [
   {
     name: "Emiliana Richard Msekela",
     title: "Chief Executive Officer",
-    objectPosition: "center 5%",
+    objectPosition: "center 20%",
     image: ceo,
     bio: "An accomplished executive driving Nkwabi Africa's operational excellence and growth across all business divisions. Emiliana brings deep expertise in resource management, trade, and sustainable development across East Africa.",
     responsibilities: [
