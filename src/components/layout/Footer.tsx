@@ -119,7 +119,7 @@ export function Footer() {
               {[
                 { icon: MapPin, text: "Kahama, Shinyanga, Tanzania" },
                 { icon: Phone, text: "+255 700 000 000" },
-                { icon: Mail, text: "info@nkwabiafrica.com" },
+                { icon: Mail, text: "info@nkwabiafrica.co.tz" },
               ].map(({ icon: Icon, text }) => (
                 <motion.li
                   key={text}

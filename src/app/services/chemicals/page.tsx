@@ -16,12 +16,13 @@ import sodaAsh from "@/components/images/soda Ash.png";
 import sulfuricAcid from "@/components/images/sulfuric acid.png";
 import ammoniumNitrate from "@/components/images/Ammonium Nitrate.png";
 import activatedCarbon from "@/components/images/activate carbon.jpeg";
+import hydratedLime from "@/components/images/Hydrated lime.jpeg";
 import safety from "@/components/images/safety.jpg";
 
 
 const highlights = [
   { icon: ShieldCheck, label: "Safety Standard", value: "ISO 45001 & MSDS Certified" },
-  { icon: Package, label: "Products Supplied", value: "7 Core Mining Chemicals" },
+  { icon: Package, label: "Products Supplied", value: "8 Core Mining Chemicals" },
   { icon: AlertTriangle, label: "Handling", value: "HAZMAT certified logistics" },
   { icon: Globe, label: "Sourcing", value: "China, India, Korea & beyond" },
 ];
@@ -90,6 +91,14 @@ const products = [
     detail: "High-activity granular carbon for CIL, CIP, and CIC gold recovery circuits. Consistent activity and hardness specifications from reputable international manufacturers.",
     specs: ["Form: Granular", "Activity: High-grade", "Reactivation: Supported"],
     image: activatedCarbon,
+  },
+  {
+    name: "Hydrated Lime",
+    tag: "pH Control",
+    use: "pH adjustment, cyanide detoxification, and effluent treatment in gold processing",
+    detail: "Calcium hydroxide Ca(OH)₂ — Hydrated Lime supplied in 25 KG bags. Used extensively in gold processing for pH regulation, tailings neutralisation, and cyanide destruction in effluent treatment systems.",
+    specs: ["Form: Powder — 25 KG bags", "Grade: Industrial / Mining", "Application: pH control & detox"],
+    image: hydratedLime,
   },
   {
     name: "Safety & PPE",
