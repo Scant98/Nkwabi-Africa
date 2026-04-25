@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 import { ScrollRevealWrapper } from "@/components/common/ScrollRevealWrapper";
 import { SectionLabel } from "@/components/common/SectionLabel";
 import { Button } from "@/components/ui/button";
@@ -32,6 +33,7 @@ const contactInfo = [
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
 
   const {
     register,
@@ -41,11 +43,27 @@ export default function ContactPage() {
   } = useForm<ContactForm>({ resolver: zodResolver(contactSchema) });
 
   const onSubmit = async (data: ContactForm) => {
-    // Simulate submission
-    await new Promise((r) => setTimeout(r, 1500));
-    console.log(data);
-    setSubmitted(true);
-    reset();
+    setSendError(null);
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: data.name,
+          from_company: data.company ?? "",
+          from_email: data.email,
+          from_phone: data.phone ?? "",
+          subject: data.subject,
+          message: data.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      setSubmitted(true);
+      reset();
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setSendError("Failed to send your message. Please try again or email us directly at info@nkwabiafrica.co.tz");
+    }
   };
 
   return (
@@ -144,6 +162,10 @@ export default function ContactPage() {
                       </>
                     )}
                   </Button>
+
+                  {sendError && (
+                    <p className="text-destructive text-sm text-center">{sendError}</p>
+                  )}
                 </form>
               )}
             </ScrollRevealWrapper>

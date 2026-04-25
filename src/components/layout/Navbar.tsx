@@ -41,8 +41,8 @@ export function Navbar() {
             : "bg-transparent"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" suppressHydrationWarning>
+          <div className="flex items-center justify-between h-16 lg:h-20" suppressHydrationWarning>
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
               <Image src="/logo.png" alt="Nkwabi Africa" width={40} height={40} className="rounded-lg object-contain" />
@@ -77,7 +77,7 @@ export function Navbar() {
             </nav>
 
             {/* Right side */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3" suppressHydrationWarning>
               {mounted && (
                 <button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

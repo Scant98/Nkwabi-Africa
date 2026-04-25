@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <TopProgressBar />
           <Navbar />
-          <div className="flex-1">{children}</div>
+          <div className="flex-1" suppressHydrationWarning>{children}</div>
           <Footer />
         </ThemeProvider>
       </body>

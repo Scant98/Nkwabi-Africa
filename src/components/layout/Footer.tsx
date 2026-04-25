@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -21,9 +22,12 @@ const itemVariants: Variants = {
 };
 
 export function Footer() {
+  const [year, setYear] = useState<number | null>(null);
+  useEffect(() => { setYear(new Date().getFullYear()); }, []);
+
   return (
     <footer className="bg-background-muted border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" suppressHydrationWarning>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -144,8 +148,8 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Nkwabi Africa Company Limited. All rights reserved.
+          <p className="text-sm text-muted-foreground" suppressHydrationWarning>
+            © {year ?? ""} Nkwabi Africa Company Limited. All rights reserved.
           </p>
           <div className="flex gap-2 items-center">
             <motion.div
