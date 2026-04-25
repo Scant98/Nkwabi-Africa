@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Agriculture",
+  description: "Nkwabi Africa grows and exports premium Tanzanian agricultural produce including coffee, grains and fresh produce from Shinyanga region.",
+  alternates: { canonical: "https://nkwabiafrica.co.tz/services/agriculture" },
+};
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollRevealWrapper } from "@/components/common/ScrollRevealWrapper";
@@ -57,8 +63,8 @@ export default function AgriculturePage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-primary/60 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-primary via-primary/60 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-32 w-full">
           <Link
@@ -123,23 +129,23 @@ export default function AgriculturePage() {
 
             <ScrollRevealWrapper direction="right">
               <div className="grid grid-cols-2 gap-3">
-                <div className="row-span-2 relative rounded-2xl overflow-hidden min-h-[320px]">
+                <div className="row-span-2 relative rounded-2xl overflow-hidden min-h-80">
                   <Image src={coffee1} alt="Coffee farming" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="25vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3">
                     <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Coffee</span>
                   </div>
                 </div>
                 <div className="relative rounded-2xl overflow-hidden aspect-square">
                   <Image src={agro2} alt="Agricultural processing" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="20vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3">
                     <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Processing</span>
                   </div>
                 </div>
                 <div className="relative rounded-2xl overflow-hidden aspect-square">
                   <Image src={coffee2} alt="Export ready" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="20vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3">
                     <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Export</span>
                   </div>
@@ -230,9 +236,9 @@ export default function AgriculturePage() {
               </div>
             </ScrollRevealWrapper>
             <ScrollRevealWrapper direction="right">
-              <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
+              <div className="relative rounded-3xl overflow-hidden aspect-4/3">
                 <Image src={agro2} alt="Farmer community" fill className="object-cover" sizes="50vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
                 <div className="absolute bottom-6 left-6 flex items-center gap-2">
                   <Users className="w-4 h-4 text-primary" />
                   <span className="text-white text-sm font-medium">Working with local cooperatives</span>

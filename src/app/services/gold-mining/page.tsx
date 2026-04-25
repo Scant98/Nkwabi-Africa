@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Gold Mining & Trading",
+  description: "Nkwabi Africa operates responsible gold mining and trading in Kahama and Geita, Tanzania. Licensed gold exporter and mineral trader.",
+  alternates: { canonical: "https://nkwabiafrica.co.tz/services/gold-mining" },
+};
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollRevealWrapper } from "@/components/common/ScrollRevealWrapper";
@@ -55,8 +61,8 @@ export default function GoldMiningPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-primary/60 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-primary via-primary/60 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-32 w-full">
           <Link

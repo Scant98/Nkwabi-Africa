@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Coffee & Agriculture",
+  description: "Nkwabi Africa sources and exports premium Tanzanian coffee and agricultural produce. Sustainable farming in the highlands of Tanzania.",
+  alternates: { canonical: "https://nkwabiafrica.co.tz/coffee" },
+};
 import Image from "next/image";
 import { FadeIn } from "@/components/common/FadeIn";
 import coffee1 from "@/components/images/coffee 1.jpeg";

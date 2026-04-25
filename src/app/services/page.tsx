@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Our Services",
+  description: "Nkwabi Africa offers gold mining & trading, coffee agriculture, logistics, mining chemicals, and business consultation services across Tanzania.",
+  alternates: { canonical: "https://nkwabiafrica.co.tz/services" },
+};
 import { FadeIn } from "@/components/common/FadeIn";
 import { ScrollRevealWrapper } from "@/components/common/ScrollRevealWrapper";
 import { SectionLabel } from "@/components/common/SectionLabel";

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/home/HeroSection";
 import { BusinessAreasSection } from "@/components/sections/home/BusinessAreasSection";
 import { StatsSection } from "@/components/sections/home/StatsSection";
@@ -5,11 +6,11 @@ import { MissionVisionSection } from "@/components/sections/home/MissionVisionSe
 import { ValuesSection } from "@/components/sections/home/ValuesSection";
 import { HomeCTASection } from "@/components/sections/home/HomeCTASection";
 import { MarqueeStrip } from "@/components/common/MarqueeStrip";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Nkwabi Africa Company Limited | Gold Mining, Agriculture & Logistics",
-  description: "A diversified Tanzanian company driving sustainable growth through gold mining, agriculture, logistics, and chemicals. Headquartered in Kahama, Shinyanga.",
+  title: "Nkwabi Africa Company Limited | Tanzania",
+  description: "Nkwabi Africa Company Limited — based in Kahama, Shinyanga, Tanzania. Gold mining, coffee agriculture, logistics and mining chemicals.",
+  alternates: { canonical: "https://nkwabiafrica.co.tz" },
 };
 
 export default function HomePage() {

@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Mining Chemicals",
+  description: "Nkwabi Africa supplies mining chemicals including activated carbon, hydrated lime and reagents to mining operations across Tanzania.",
+  alternates: { canonical: "https://nkwabiafrica.co.tz/services/chemicals" },
+};
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollRevealWrapper } from "@/components/common/ScrollRevealWrapper";
@@ -174,23 +180,23 @@ export default function ChemicalsPage() {
 
             <ScrollRevealWrapper direction="right">
               <div className="grid grid-cols-2 gap-3">
-                <div className="row-span-2 relative rounded-2xl overflow-hidden min-h-[320px]">
+                <div className="row-span-2 relative rounded-2xl overflow-hidden min-h-80">
                   <Image src={sodiumCyanide} alt="Sodium Cyanide drums" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="25vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3">
                     <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Sodium Cyanide</span>
                   </div>
                 </div>
                 <div className="relative rounded-2xl overflow-hidden aspect-square">
                   <Image src={causticSoda} alt="Caustic Soda Flakes" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="20vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3">
                     <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Caustic Soda</span>
                   </div>
                 </div>
                 <div className="relative rounded-2xl overflow-hidden aspect-square">
                   <Image src={sulfuricAcid} alt="Sulfuric Acid" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="20vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3">
                     <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Sulfuric Acid</span>
                   </div>
@@ -217,7 +223,7 @@ export default function ChemicalsPage() {
               <ScrollRevealWrapper key={product.name} direction="up" delay={i * 0.08}>
                 <div className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 h-full flex flex-col">
                   {/* Image */}
-                  <div className="relative w-full aspect-[4/3] overflow-hidden shrink-0">
+                  <div className="relative w-full aspect-4/3 overflow-hidden shrink-0">
                     <Image
                       src={product.image}
                       alt={product.name}
@@ -225,7 +231,7 @@ export default function ChemicalsPage() {
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
                     {/* Tag */}
                     <div className="absolute top-4 left-4">
                       <span className="text-xs font-semibold uppercase tracking-widest text-white/90 bg-primary/80 px-2.5 py-1 rounded-full backdrop-blur-sm">
@@ -296,9 +302,9 @@ export default function ChemicalsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollRevealWrapper direction="left">
-              <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
+              <div className="relative rounded-3xl overflow-hidden aspect-4/3">
                 <Image src={safety} alt="Chemical safety" fill className="object-cover" sizes="50vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
                 <div className="absolute bottom-6 left-6 flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-primary" />
                   <span className="text-white text-sm font-medium">ISO 45001 certified operations</span>
