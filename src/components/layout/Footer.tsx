@@ -118,7 +118,7 @@ export function Footer() {
             <ul className="space-y-4">
               {[
                 { icon: MapPin, text: "Kahama, Shinyanga, Tanzania" },
-                { icon: Phone, text: "+255 700 000 000" },
+                { icon: Phone, text: "+255 747 555 542" },
                 { icon: Mail, text: "info@nkwabiafrica.co.tz" },
               ].map(({ icon: Icon, text }) => (
                 <motion.li

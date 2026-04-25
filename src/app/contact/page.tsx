@@ -25,7 +25,7 @@ type ContactForm = z.infer<typeof contactSchema>;
 
 const contactInfo = [
   { icon: MapPin, title: "Headquarters", lines: ["Kahama, Shinyanga", "Tanzania"] },
-  { icon: Phone, title: "Phone", lines: ["+255 700 000 000", "+255 685 000 000"] },
+  { icon: Phone, title: "Phone", lines: ["+255 747 555 542"] },
   { icon: Mail, title: "Email", lines: ["info@nkwabiafrica.co.tz", "trade@nkwabiafrica.co.tz"] },
   { icon: Clock, title: "Business Hours", lines: ["Mon – Fri: 8:00 AM – 6:00 PM", "Sat: 9:00 AM – 1:00 PM"] },
 ];
