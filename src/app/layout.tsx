@@ -20,8 +20,6 @@ export const metadata: Metadata = {
   description: "Nkwabi Africa Company Limited is a diversified Tanzanian company based in Kahama, Shinyanga. We specialise in gold mining, coffee agriculture, logistics, and mining chemicals.",
   keywords: [
     "Nkwabi Africa",
-    "nkwabiafrica",
-    "Tanzania company",
     "gold mining Tanzania",
     "Kahama mining",
     "Shinyanga gold",
@@ -29,7 +27,13 @@ export const metadata: Metadata = {
     "coffee export Tanzania",
     "mining chemicals Tanzania",
     "Tanzania logistics",
+    "gold trading Africa",
+    "ASM mining Tanzania",
+    "AMCOS coffee Tanzania",
     "Nkwabi Africa Company Limited",
+    "Tanzania mining company",
+    "East Africa mining",
+    "gold exporter Tanzania",
   ],
   authors: [{ name: "Nkwabi Africa Company Limited" }],
   creator: "Nkwabi Africa Company Limited",
@@ -37,7 +41,10 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
   openGraph: {
     type: "website",
@@ -46,21 +53,37 @@ export const metadata: Metadata = {
     siteName: "Nkwabi Africa Company Limited",
     title: "Nkwabi Africa Company Limited | Tanzania",
     description: "A diversified Tanzanian company specialising in gold mining, coffee agriculture, logistics, and mining chemicals. Based in Kahama, Shinyanga.",
-    images: [{ url: "/logo.png", width: 400, height: 400, alt: "Nkwabi Africa Logo" }],
+    images: [
+      {
+        url: "/logo.png",
+        width: 400,
+        height: 400,
+        alt: "Nkwabi Africa Company Limited",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "Nkwabi Africa Company Limited",
+    card: "summary_large_image",
+    site: "@nkwabiafrica",
+    creator: "@nkwabiafrica",
+    title: "Nkwabi Africa Company Limited | Tanzania",
     description: "Gold mining, agriculture, logistics and mining chemicals — based in Tanzania.",
     images: ["/logo.png"],
   },
   alternates: {
     canonical: "https://nkwabiafrica.co.tz",
+    types: {
+      "application/rss+xml": "https://nkwabiafrica.co.tz/rss.xml",
+    },
+  },
+  verification: {
+    google: "bbeaea1b1abcd1c7",
   },
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
   },
+  category: "Business",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
