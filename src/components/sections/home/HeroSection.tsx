@@ -8,14 +8,12 @@ import { Button } from "@/components/ui/button";
 import coffee1 from "@/components/images/coffee 1.jpeg";
 import agro1 from "@/components/images/agro1.jpeg";
 import logi1 from "@/components/images/logi1.jpeg";
-import chemi1 from "@/components/images/chemi1.jpeg";
 import gold1 from "@/components/images/gold1.jpg";
 
 const mosaicImages = [
-  { src: coffee1, alt: "Coffee trading in Tanzania", label: "Coffee & Agri", delay: 0.55, rotate: 2, position: "top-0 left-0 w-[52%]" },
-  { src: gold1, alt: "Gold mining and trading in Tanzania", label: "GOld Sector", delay: 0.70, rotate: -1.5, position: "top-4 right-0 w-[44%]" },
-  { src: logi1, alt: "Logistics fleet", label: "Logistics", delay: 0.85, rotate: -2, position: "bottom-0 left-4 w-[44%]" },
-  // { src: chemi1, alt: "Mining chemicals supply", label: "Mining Chemicals", delay: 1.0, rotate: 1.5, position: "bottom-4 right-0 w-[52%]" },
+  { src: coffee1, alt: "Coffee trading in Tanzania", label: "Coffee & Agri", delay: 0.55, rotate: 2, position: "top-0 left-0 w-[54%]" },
+  { src: gold1, alt: "Gold mining and trading in Tanzania", label: "Gold Sector", delay: 0.70, rotate: -1.5, position: "top-4 right-0 w-[43%]" },
+  { src: logi1, alt: "Logistics fleet", label: "Logistics", delay: 0.85, rotate: 1, position: "bottom-0 right-0 w-[56%]" },
 ];
 
 export function HeroSection() {
@@ -85,7 +83,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.65 }}
               className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10"
             >
-              A diversified Tanzanian company driving sustainable growth through gold mining, agriculture, logistics, and chemicals — creating value for communities across Africa.
+              A diversified Tanzanian company driving sustainable growth through gold mining, agriculture, and logistics — creating lasting value for communities across Africa.
             </motion.p>
 
             <motion.div
@@ -112,7 +110,7 @@ export function HeroSection() {
               className="mt-16 flex flex-wrap gap-8"
             >
               {[
-                { value: "4", label: "Business Divisions" },
+                { value: "3", label: "Business Divisions" },
                 { value: "500+", label: "Team Members" },
                 { value: "10+", label: "Years of Growth" },
                 { value: "12+", label: "Markets Served" },
@@ -161,7 +159,7 @@ export function HeroSection() {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-background/95 backdrop-blur-sm border border-primary/40 rounded-2xl px-5 py-4 shadow-2xl border-gold-glow"
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary leading-none">4</div>
+                <div className="text-2xl font-bold text-primary leading-none">3</div>
                 <div className="text-[9px] text-muted-foreground uppercase tracking-[0.15em] mt-0.5">Sectors</div>
               </div>
             </motion.div>
