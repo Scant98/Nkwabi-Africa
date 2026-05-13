@@ -15,7 +15,7 @@ const mosaicImages = [
   { src: coffee1, alt: "Coffee trading in Tanzania", label: "Coffee & Agri", delay: 0.55, rotate: 2, position: "top-0 left-0 w-[52%]" },
   { src: gold1, alt: "Gold mining and trading in Tanzania", label: "GOld Sector", delay: 0.70, rotate: -1.5, position: "top-4 right-0 w-[44%]" },
   { src: logi1, alt: "Logistics fleet", label: "Logistics", delay: 0.85, rotate: -2, position: "bottom-0 left-4 w-[44%]" },
-  { src: chemi1, alt: "Mining chemicals supply", label: "Mining Chemicals", delay: 1.0, rotate: 1.5, position: "bottom-4 right-0 w-[52%]" },
+  // { src: chemi1, alt: "Mining chemicals supply", label: "Mining Chemicals", delay: 1.0, rotate: 1.5, position: "bottom-4 right-0 w-[52%]" },
 ];
 
 export function HeroSection() {

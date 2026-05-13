@@ -24,19 +24,19 @@ const directors = [
       "Board oversight and leadership",
     ],
   },
-  {
-    name: "Emiliana Richard Msekela",
-    title: "Chief Executive Officer",
-    objectPosition: "center 20%",
-    image: ceo,
-    bio: "An accomplished executive driving Nkwabi Africa's operational excellence and growth across all business divisions. Emiliana brings deep expertise in resource management, trade, and sustainable development across East Africa.",
-    responsibilities: [
-      "Day-to-day business operations",
-      "Cross-divisional performance management",
-      "Strategic partnerships & business development",
-      "Regulatory compliance and governance",
-    ],
-  },
+  // {
+  //   name: "Emiliana Richard Msekela",
+  //   title: "Chief Executive Officer",
+  //   objectPosition: "center 20%",
+  //   image: ceo,
+  //   bio: "An accomplished executive driving Nkwabi Africa's operational excellence and growth across all business divisions. Emiliana brings deep expertise in resource management, trade, and sustainable development across East Africa.",
+  //   responsibilities: [
+  //     "Day-to-day business operations",
+  //     "Cross-divisional performance management",
+  //     "Strategic partnerships & business development",
+  //     "Regulatory compliance and governance",
+  //   ],
+  // },
 ];
 
 export default function DirectorsPage() {
@@ -44,7 +44,7 @@ export default function DirectorsPage() {
     <main>
       {/* Hero */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-24 bg-background-muted relative overflow-clip">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent" />
         <div
           className="absolute inset-0 opacity-[0.025]"
           style={{
@@ -52,7 +52,7 @@ export default function DirectorsPage() {
             backgroundSize: "56px 56px",
           }}
         />
-        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-primary/60 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-primary via-primary/60 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -102,7 +102,7 @@ export default function DirectorsPage() {
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
 
                     {/* Name + title over image */}
                     <motion.div
@@ -121,7 +121,7 @@ export default function DirectorsPage() {
                     </motion.div>
 
                     {/* Gold top accent */}
-                    <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/80 via-primary to-primary/20" />
+                    <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-primary/80 via-primary to-primary/20" />
                   </div>
 
                   {/* Details */}

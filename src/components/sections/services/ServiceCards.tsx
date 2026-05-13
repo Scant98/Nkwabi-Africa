@@ -77,25 +77,25 @@ const services = [
     href: "/services/logistics",
     bgClass: "bg-background-muted",
   },
-  {
-    id: "chemicals",
-    icon: FlaskConical,
-    badge: "Regulated Supply",
-    title: "Gold Mining Chemicals",
-    tagline: "Safe, compliant supply of essential mining reagents",
-    description:
-      "We supply essential chemicals and reagents for gold mining operations across Tanzania. All products are sourced from reputable international manufacturers with full safety, environmental, and regulatory compliance.",
-    features: [
-      "Sodium cyanide supply for gold processing",
-      "Activated carbon for gold recovery",
-      "Lime and other processing reagents",
-      "Safety and PPE equipment",
-      "MSDS documentation and training",
-      "Compliant storage and transport solutions",
-    ],
-    href: "/services/chemicals",
-    bgClass: "bg-background",
-  },
+  // {
+  //   id: "chemicals",
+  //   icon: FlaskConical,
+  //   badge: "Regulated Supply",
+  //   title: "Gold Mining Chemicals",
+  //   tagline: "Safe, compliant supply of essential mining reagents",
+  //   description:
+  //     "We supply essential chemicals and reagents for gold mining operations across Tanzania. All products are sourced from reputable international manufacturers with full safety, environmental, and regulatory compliance.",
+  //   features: [
+  //     "Sodium cyanide supply for gold processing",
+  //     "Activated carbon for gold recovery",
+  //     "Lime and other processing reagents",
+  //     "Safety and PPE equipment",
+  //     "MSDS documentation and training",
+  //     "Compliant storage and transport solutions",
+  //   ],
+  //   href: "/services/chemicals",
+  //   bgClass: "bg-background",
+  // },
 ];
 
 export function ServiceCards() {
@@ -145,7 +145,7 @@ export function ServiceCards() {
                           className="object-cover transition-transform duration-700 hover:scale-105"
                           sizes="(max-width: 1024px) 100vw, 50vw"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-black/55 via-black/10 to-transparent" />
                         <div className="absolute bottom-4 left-4 right-4">
                           <p className="text-white/90 text-sm font-medium leading-snug">{service.tagline}</p>
                         </div>

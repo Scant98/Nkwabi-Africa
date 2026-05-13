@@ -32,12 +32,12 @@ const businesses = [
     icon: Truck,
     href: "/services#logistics",
   },
-  {
-    title: "Mining Chemicals",
-    description: "Trading of chemicals and reagents for gold mining operations including sodium cyanide and activated carbon, with full regulatory compliance.",
-    icon: FlaskConical,
-    href: "/services#chemicals",
-  },
+  // {
+  //   title: "Mining Chemicals",
+  //   description: "Trading of chemicals and reagents for gold mining operations including sodium cyanide and activated carbon, with full regulatory compliance.",
+  //   icon: FlaskConical,
+  //   href: "/services#chemicals",
+  // },
 ];
 
 export function BusinessAreasSection() {
@@ -70,13 +70,13 @@ export function BusinessAreasSection() {
             { src: coffee1, label: "Coffee & Agriculture" },
             { src: agro2, label: "Farming & Export" },
             { src: logi3, label: "Logistics Fleet" },
-            { src: chemi5, label: "Mining Chemicals" },
+            // { src: chemi5, label: "Mining Chemicals" },
           ].map((item, i) => (
             <ScrollRevealWrapper key={item.label} direction="up" delay={i * 0.08}>
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="relative rounded-xl overflow-hidden aspect-[3/2] group cursor-pointer"
+                className="relative rounded-xl overflow-hidden aspect-3/2 group cursor-pointer"
               >
                 <Image
                   src={item.src}
@@ -85,7 +85,7 @@ export function BusinessAreasSection() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3">
                   <span className="text-white text-xs font-semibold uppercase tracking-widest">{item.label}</span>
                 </div>

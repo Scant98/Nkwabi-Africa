@@ -100,7 +100,7 @@ export function Footer() {
                 "Gold Mining & Trading",
                 "Agriculture",
                 "Logistics",
-                "Mining Chemicals",
+                // "Mining Chemicals",
                 "Consultation",
               ].map((s) => (
                 <li key={s}>

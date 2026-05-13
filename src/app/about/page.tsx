@@ -12,10 +12,8 @@ import agro2 from "@/components/images/agro2.jpeg";
 import logi1 from "@/components/images/logi1.jpeg";
 import logi2 from "@/components/images/logi2.jpeg";
 import logi3 from "@/components/images/logi3.jpeg";
-import chemi1 from "@/components/images/chemi1.jpeg";
-import chemi2 from "@/components/images/chemi2.jpeg";
 
-const slideImages = [logi3, agro1, coffee1, logi1, chemi1, agro2];
+const slideImages = [logi3, agro1, coffee1, logi1, agro2];
 
 const values = [
   { icon: Shield, title: "Integrity", desc: "Operating with transparency and ethics in every transaction and partnership." },
@@ -70,11 +68,11 @@ export default function AboutPage() {
 
         {/* Overlays */}
         <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/50 to-transparent" />
 
         {/* Top gold accent */}
-        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-primary/60 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-primary via-primary/60 to-transparent" />
 
         {/* Hero text */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -98,7 +96,7 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-lg sm:text-xl text-white/70 max-w-xl leading-relaxed">
-              A Tanzanian company driving sustainable growth through gold mining, agriculture, logistics, and mining chemicals.
+              A Tanzanian company driving sustainable growth through gold mining, agriculture, and logistics.
             </p>
           </motion.div>
         </div>
@@ -151,23 +149,23 @@ export default function AboutPage() {
               <div className="grid grid-cols-12 grid-rows-2 gap-3 h-[480px]">
                 <div className="col-span-7 row-span-2 relative rounded-2xl overflow-hidden">
                   <Image src={agro1} alt="Agriculture operations" fill className="object-cover transition-transform duration-700 hover:scale-105" sizes="35vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-4 left-4">
                     <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Agriculture</span>
                   </div>
                 </div>
                 <div className="col-span-5 relative rounded-2xl overflow-hidden">
                   <Image src={coffee1} alt="Coffee trading" fill className="object-cover transition-transform duration-700 hover:scale-105" sizes="20vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3">
                     <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Coffee</span>
                   </div>
                 </div>
                 <div className="col-span-5 relative rounded-2xl overflow-hidden">
-                  <Image src={chemi2} alt="Mining chemicals" fill className="object-cover transition-transform duration-700 hover:scale-105" sizes="20vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <Image src={logi2} alt="Logistics operations" fill className="object-cover transition-transform duration-700 hover:scale-105" sizes="20vw" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-3">
-                    <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Chemicals</span>
+                    <span className="text-xs font-semibold text-white/90 uppercase tracking-widest bg-black/35 px-2 py-1 rounded-full backdrop-blur-sm">Logistics</span>
                   </div>
                 </div>
               </div>
@@ -237,7 +235,7 @@ export default function AboutPage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
                   <div className="absolute bottom-5 left-5">
                     <p className="text-white font-bold text-base leading-tight">{item.label}</p>
                     <p className="text-white/60 text-xs mt-1">{item.sub}</p>
